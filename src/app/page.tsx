@@ -147,7 +147,7 @@ export default function Home() {
           <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
             <div>
               <div className="flex items-center gap-3 mb-6">
-                <img src="/zantara-logo.png" className="h-10 w-10 rounded-full" alt="Zantara Logo" />
+                <img src="zantara-logo.png" className="h-10 w-10 rounded-full" alt="Zantara Logo" />
                 <h3 className="text-xl font-black text-white tracking-tighter">ZANTARA<span className="text-purple-500">AI</span></h3>
               </div>
               <p className="text-sm text-gray-500 leading-relaxed">

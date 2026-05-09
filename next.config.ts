@@ -5,8 +5,9 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // Ensure that links work correctly on GitHub Pages (if using sub-path)
-  // basePath: '/zantara-ai', 
+  // Memberitahu Next.js bahwa website ada di folder /zantara-ai/
+  basePath: '/zantara-ai',
+  assetPrefix: '/zantara-ai',
 };
 
 export default nextConfig;

@@ -29,7 +29,7 @@ export default function Navbar() {
       <div className="flex items-center gap-3">
         <div className="relative flex h-12 w-12 items-center justify-center rounded-full overflow-hidden border border-purple-500/30 shadow-[0_0_20px_rgba(168,85,247,0.3)]">
           <img 
-            src="/zantara-logo.png" 
+            src="zantara-logo.png" 
             alt="Zantara AI" 
             className="h-full w-full object-cover"
           />
