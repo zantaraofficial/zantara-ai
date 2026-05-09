@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZANTARA AI - Dari Ide Ke Penghasilan</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="assets/electric-border.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon"><img src="assets/logo.png" alt="Z"></div>
+      <div class="logo-text">
+        <span class="logo-name">ZANTARA</span>
+        <span class="logo-sub">Dari Ide Ke Penghasilan</span>
+      </div>
+    </a>
+
+    <nav class="header-nav">
+      <a href="#">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#trending">Trending</a>
+      <a href="#news">News</a>
+    </nav>
+    <div class="header-right">
+      <button class="wizard-btn" onclick="openWizard()">
+        <span>🪄</span> Help Me Choose
+      </button>
+      <span class="community-text">JOIN OUR COMMUNITY</span>
+      <div class="social-links">
+        <a href="https://t.me" target="_blank" class="social-btn telegram"><img src="assets/telegram.png" alt="Telegram"></a>
+        <a href="https://instagram.com" target="_blank" class="social-btn instagram"><img src="assets/instagram.png" alt="Instagram"></a>
+        <a href="https://youtube.com" target="_blank" class="social-btn youtube"><img src="assets/youtube.png" alt="YouTube"></a>
+        <a href="https://tiktok.com" target="_blank" class="social-btn tiktok"><img src="assets/tiktok.png" alt="TikTok"></a>
+      </div>
+    </div>
+  </div>
+  <div class="news-ticker">
+    <div class="ticker-content">
+      <div class="ticker-item"><span>🚀</span> OpenAI launched Sora preview for developers</div>
+      <div class="ticker-item"><span>🔥</span> Midjourney V6.1 is now available with better text rendering</div>
+      <div class="ticker-item"><span>⚡</span> Claude 3.5 Sonnet surpasses GPT-4o in coding benchmarks</div>
+      <div class="ticker-item"><span>🤖</span> Google integrates Gemini into Android 15 core</div>
+      <div class="ticker-item"><span>💎</span> Perplexity AI raises $250M to challenge search giants</div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-badge"><span>⚡</span> Smart Tools, Better You</div>
+      <h1 class="hero-title">
+        Discover The Best<br>
+        <span class="highlight">AI Tools</span> For Your<br>
+        Productivity
+      </h1>
+      <p class="hero-desc">Explore 500+ AI tools across 12 categories. Find the perfect AI solution to boost your productivity and creativity.</p>
+      <div class="search-bar">
+        <span style="color:var(--text-muted);font-size:16px;margin-right:8px">🔍</span>
+        <div class="search-wrapper">
+          <input type="text" id="search-input" placeholder="Search AI tools... (e.g. ChatGPT, Midjourney)" oninput="handleSearch(this.value)">
+          <div class="search-suggestions" id="search-suggestions"></div>
+        </div>
+        <button class="search-btn">🔍</button>
+      </div>
+      <div class="hero-social-proof">
+        <div class="avatars">
+          <img src="https://i.pravatar.cc/150?u=1" class="avatar" alt="User">
+          <img src="https://i.pravatar.cc/150?u=2" class="avatar" alt="User">
+          <img src="https://i.pravatar.cc/150?u=3" class="avatar" alt="User">
+          <img src="https://i.pravatar.cc/150?u=4" class="avatar" alt="User">
+          <img src="https://i.pravatar.cc/150?u=5" class="avatar" alt="User">
+        </div>
+        <div class="proof-text">
+          <strong>50K+</strong>
+          <span>Productive people already joined</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right" style="position:relative;min-height:520px;display:flex;align-items:center;perspective:2000px">
+      <!-- 3D Floating Assets around the panel -->
+      <div class="float-icon" style="width:70px;height:70px;top:-10px;left:30px;animation-delay:0s;border-color:#3b82f6;box-shadow:0 0 30px rgba(59,130,246,0.6)">
+        <img src="https://www.google.com/s2/favicons?domain=openai.com&sz=128" style="width:70%;height:70%">
+      </div>
+      <div class="float-icon" style="width:60px;height:60px;top:200px;left:-40px;animation-delay:1s;border-color:#a855f7;box-shadow:0 0 30px rgba(168,85,247,0.6)">
+        <span style="font-size:18px;font-weight:900;background:linear-gradient(135deg,#fff,#a855f7);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">AI</span>
+      </div>
+      <div class="float-icon" style="width:55px;height:55px;bottom:20px;left:10px;animation-delay:2s;border-color:#fff">
+        <img src="https://www.google.com/s2/favicons?domain=notion.so&sz=128" style="width:70%;height:70%">
+      </div>
+      <div class="float-icon" style="width:50px;height:50px;top:70px;right:0px;animation-delay:1.5s;border-color:#3b82f6">
+        <span style="font-size:22px">💠</span>
+      </div>
+      <div class="float-icon" style="width:60px;height:60px;bottom:100px;right:-30px;animation-delay:2.5s;border-color:#3b82f6">
+        <span style="font-size:24px">🔷</span>
+      </div>
+
+      <!-- Glowing Base Platform -->
+      <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%) rotateX(70deg);width:400px;height:100px;background:radial-gradient(ellipse at center, rgba(124,58,237,0.6), transparent 80%);border-radius:50%;filter:blur(20px);z-index:1"></div>
+      <div style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);width:250px;height:5px;background:linear-gradient(90deg,transparent,#3b82f6,transparent);border-radius:50%;filter:blur(2px);z-index:1"></div>
+
+      <div class="electric-border-container effect-3d" data-eb-color="#a855f7" data-eb-speed="0.8" data-eb-chaos="0.05" style="margin-left:90px">
+        <canvas class="electric-border-canvas"></canvas>
+        <div class="eb-glow-1"></div>
+        <div class="eb-glow-2"></div>
+        <div class="eb-background-glow"></div>
+        
+        <div class="electric-border-content">
+          <div class="floating-panel" style="width:100%;max-width:390px">
+            <div class="panel-header">
+              <span class="panel-title">Most Popular</span>
+              <span class="panel-close">✕</span>
+            </div>
+            <div class="panel-list">
+              <a href="#" class="panel-item" onclick="openModal('chatgpt',event)">
+                <span class="panel-rank">1</span>
+                <div class="panel-icon" style="background:rgba(16,185,129,0.15)"><img src="https://www.google.com/s2/favicons?domain=openai.com&sz=128" alt="ChatGPT"></div>
+                <div class="panel-info"><div class="panel-name">ChatGPT</div><div class="panel-cat">AI Chatbot</div></div>
+                <span class="panel-arrow">›</span>
+              </a>
+              <a href="#" class="panel-item" onclick="openModal('midjourney',event)">
+                <span class="panel-rank">2</span>
+                <div class="panel-icon" style="background:rgba(255,255,255,0.05)"><img src="https://www.google.com/s2/favicons?domain=midjourney.com&sz=128" alt="Midjourney"></div>
+                <div class="panel-info"><div class="panel-name">Midjourney</div><div class="panel-cat">AI Image Generator</div></div>
+                <span class="panel-arrow">›</span>
+              </a>
+              <a href="#" class="panel-item" onclick="openModal('notion',event)">
+                <span class="panel-rank">3</span>
+                <div class="panel-icon" style="background:rgba(255,255,255,0.05)"><img src="https://www.google.com/s2/favicons?domain=notion.so&sz=128" alt="Notion"></div>
+                <div class="panel-info"><div class="panel-name">Notion AI</div><div class="panel-cat">AI Productivity</div></div>
+                <span class="panel-arrow">›</span>
+              </a>
+              <a href="#" class="panel-item" onclick="openModal('claude',event)">
+                <span class="panel-rank">4</span>
+                <div class="panel-icon" style="background:rgba(249,115,22,0.15)"><img src="https://www.google.com/s2/favicons?domain=claude.ai&sz=128" alt="Claude"></div>
+                <div class="panel-info"><div class="panel-name">Claude</div><div class="panel-cat">AI Chatbot</div></div>
+                <span class="panel-arrow">›</span>
+              </a>
+              <a href="#" class="panel-item" onclick="openModal('cursor',event)">
+                <span class="panel-rank">5</span>
+                <div class="panel-icon" style="background:rgba(255,255,255,0.05)"><img src="https://www.google.com/s2/favicons?domain=cursor.com&sz=128" alt="Cursor"></div>
+                <div class="panel-info"><div class="panel-name">Cursor</div><div class="panel-cat">AI Code Editor</div></div>
+                <span class="panel-arrow">›</span>
+              </a>
+            </div>
+            <div class="panel-footer">
+              <a href="#tools-grid">View All Trending →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CATEGORIES ===== -->
+<section class="section reveal" id="categories">
+  <div class="section-inner">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Browse By Categories</div>
+      </div>
+      <a href="javascript:void(0)" class="view-all" onclick="openCategoryModal()">View All Categories →</a>
+    </div>
+    <div class="categories-grid">
+      <div class="cat-card" onclick="initTools('AI Chatbot')"><div class="cat-icon" style="background:rgba(59,130,246,0.15);color:#60a5fa">💬</div><div class="cat-name">AI Chatbot</div><div class="cat-count">8 Tools</div></div>
+      <div class="cat-card" onclick="initTools('AI Writing')"><div class="cat-icon" style="background:rgba(16,185,129,0.15);color:#34d399">✏️</div><div class="cat-name">AI Writing</div><div class="cat-count">9 Tools</div></div>
+      <div class="cat-card" onclick="initTools('AI Image Generator')"><div class="cat-icon" style="background:rgba(168,85,247,0.15);color:#c084fc">🖼️</div><div class="cat-name">AI Image</div><div class="cat-count">7 Tools</div></div>
+      <div class="cat-card" onclick="initTools('AI Video')"><div class="cat-icon" style="background:rgba(239,68,68,0.15);color:#f87171">🎬</div><div class="cat-name">AI Video</div><div class="cat-count">10 Tools</div></div>
+      <div class="cat-card" onclick="initTools('AI Presentation')"><div class="cat-icon" style="background:rgba(245,158,11,0.15);color:#fbbf24">🎵</div><div class="cat-name">AI Presentation</div><div class="cat-count">8 Tools</div></div>
+      <div class="cat-card" onclick="initTools('AI Coding')"><div class="cat-icon" style="background:rgba(99,102,241,0.15);color:#818cf8">💻</div><div class="cat-name">AI Coding</div><div class="cat-count">7 Tools</div></div>
+      <div class="cat-card" onclick="initTools('AI Design')"><div class="cat-icon" style="background:rgba(236,72,153,0.15);color:#f472b6">🎨</div><div class="cat-name">AI Design</div><div class="cat-count">6 Tools</div></div>
+      <div class="cat-card" onclick="initTools('AI Automation')"><div class="cat-icon" style="background:rgba(14,165,233,0.15);color:#38bdf8">⚙️</div><div class="cat-name">Automation</div><div class="cat-count">6 Tools</div></div>
+      <div class="cat-card" onclick="initTools('AI Data Viz')"><div class="cat-icon" style="background:rgba(20,184,166,0.15);color:#2dd4bf">📊</div><div class="cat-name">Data AI</div><div class="cat-count">5 Tools</div></div>
+      <div class="cat-card" onclick="initTools('AI Spreadsheet')"><div class="cat-icon" style="background:rgba(249,115,22,0.15);color:#fb923c">💼</div><div class="cat-name">Spreadsheet</div><div class="cat-count">5 Tools</div></div>
+      <div class="cat-card" onclick="initTools('AI Scheduling')"><div class="cat-icon" style="background:rgba(139,92,246,0.15);color:#a78bfa">🌟</div><div class="cat-name">Scheduling</div><div class="cat-count">6 Tools</div></div>
+      <div class="cat-card" onclick="initTools(null, true)"><div class="cat-icon" style="background:rgba(100,116,139,0.15);color:#94a3b8">🔧</div><div class="cat-name">Show All</div><div class="cat-count">90+ Tools</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAVORITES ===== -->
+<section class="section favorites-section" id="favorites-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Your Favorite Tools</div>
+        <div class="section-sub">Tools you've bookmarked for quick access</div>
+      </div>
+    </div>
+    <div class="tools-grid" id="favorites-grid"></div>
+  </div>
+</section>
+
+<!-- ===== TRENDING TOOLS ===== -->
+<section class="section reveal" id="trending" style="padding-top:10px">
+  <div class="section-inner">
+    <div class="section-header">
+      <div>
+        <div class="section-title">Trending AI Tools</div>
+        <div class="section-sub">The most popular and highest rated AI tools right now</div>
+      </div>
+      <a href="javascript:void(0)" class="view-all" onclick="initTools(null, true)">View All Tools →</a>
+    </div>
+    <div class="tools-grid" id="tools-grid"></div>
+    <div class="dots">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<div class="stats-section reveal">
+  <div class="stats-container">
+    <div class="stats-robot">🤖</div>
+    <div class="stat-item">
+      <div class="stat-icon">❃</div>
+      <div class="stat-content">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">AI Tools</div>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">📥</div>
+      <div class="stat-content">
+        <div class="stat-num">12</div>
+        <div class="stat-label">Categories</div>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">🫂</div>
+      <div class="stat-content">
+        <div class="stat-num">50K+</div>
+        <div class="stat-label">Happy Users</div>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">✦</div>
+      <div class="stat-content">
+        <div class="stat-num">120K+</div>
+        <div class="stat-label">Monthly Visits</div>
+      </div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">⏲️</div>
+      <div class="stat-content">
+        <div class="stat-num">99.9%</div>
+        <div class="stat-label">Uptime</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="hiw-section reveal">
+  <div class="hiw-inner">
+    <div>
+      <div class="section-title" style="font-size:24px;margin-bottom:8px">How It Works</div>
+      <div class="section-sub" style="margin-bottom:30px">Find the perfect AI tool in just 3 simple steps</div>
+      <div class="hiw-steps">
+        <div class="hiw-step">
+          <div style="display:flex;align-items:center;gap:16px;flex:1">
+            <div style="font-size:28px;background:rgba(59,130,246,0.1);width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0">🔍</div>
+            <div style="flex:1">
+              <div class="step-title"><span class="step-num" style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--blue));font-size:11px;font-weight:800;margin-right:8px">1</span>Search or Browse</div>
+              <div class="step-desc">Search or explore AI tools by category.</div>
+            </div>
+            <span style="color:var(--text-muted);font-size:20px">→</span>
+          </div>
+        </div>
+        <div class="hiw-step">
+          <div style="display:flex;align-items:center;gap:16px;flex:1">
+            <div style="font-size:28px;background:rgba(168,85,247,0.1);width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0">📋</div>
+            <div style="flex:1">
+              <div class="step-title"><span class="step-num" style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--blue));font-size:11px;font-weight:800;margin-right:8px">2</span>Discover & Compare</div>
+              <div class="step-desc">Read details, reviews, and compare tools.</div>
+            </div>
+            <span style="color:var(--text-muted);font-size:20px">→</span>
+          </div>
+        </div>
+        <div class="hiw-step">
+          <div style="display:flex;align-items:center;gap:16px;flex:1">
+            <div style="font-size:28px;background:rgba(16,185,129,0.1);width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0">🚀</div>
+            <div style="flex:1">
+              <div class="step-title"><span class="step-num" style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--blue));font-size:11px;font-weight:800;margin-right:8px">3</span>Boost Productivity</div>
+              <div class="step-desc">Click to visit the tool and start boosting your productivity.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hiw-visual">
+      <div style="font-size:80px;filter:drop-shadow(0 0 30px rgba(124,58,237,0.6))">🤖</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="logo" style="margin-bottom:14px;display:flex">
+          <div class="logo-icon"><img src="assets/logo.png" alt="Z"></div>
+          <div class="logo-text" style="margin-left:10px">
+            <span class="logo-name">ZANTARA</span>
+            <span class="logo-sub">Dari Ide Ke Penghasilan</span>
+          </div>
+        </a>
+        <p>Your ultimate directory for discovering the best AI tools to boost productivity and creativity.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">All Tools</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">AI News</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Popular Categories</h4>
+        <ul>
+          <li><a href="#">AI Chatbot</a></li>
+          <li><a href="#">AI Image</a></li>
+          <li><a href="#">AI Video</a></li>
+          <li><a href="#">AI Coding</a></li>
+          <li><a href="#">Automation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Affiliate Program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-community">
+        <h4>Join Our Community</h4>
+        <p>Join our community and get the latest AI tools, tips, and updates!</p>
+        <div class="footer-socials">
+          <a href="https://t.me" target="_blank" class="social-btn telegram"><img src="assets/telegram.png" alt="Telegram"></a>
+          <a href="https://instagram.com" target="_blank" class="social-btn instagram"><img src="assets/instagram.png" alt="Instagram"></a>
+          <a href="https://youtube.com" target="_blank" class="social-btn youtube"><img src="assets/youtube.png" alt="YouTube"></a>
+          <a href="https://tiktok.com" target="_blank" class="social-btn tiktok"><img src="assets/tiktok.png" alt="TikTok"></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2024 Zantara. All rights reserved.</span>
+      <span class="footer-made">Made with <span>❤️</span> for a smarter future.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== MODAL ===== -->
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="document.getElementById('modal-overlay').classList.remove('active')">✕</button>
+    <div id="modal-logo" class="modal-logo"></div>
+    <div id="modal-name" class="modal-name"></div>
+    <span id="modal-cat" class="modal-cat"></span>
+    <div id="modal-desc" class="modal-desc"></div>
+    <div class="modal-meta">
+      <div class="modal-meta-item">
+        <div class="modal-meta-label">PRICING</div>
+        <div class="modal-meta-val" id="modal-pricing">Free / Paid</div>
+      </div>
+      <div class="modal-meta-item">
+        <div class="modal-meta-label">RATING</div>
+        <div class="modal-meta-val" id="modal-rating" style="color:var(--gold)">⭐ 4.9</div>
+      </div>
+      <div class="modal-meta-item">
+        <div class="modal-meta-label">CATEGORY</div>
+        <div class="modal-meta-val" id="modal-cat2" style="font-size:11px;color:var(--purple-light)"></div>
+      </div>
+    </div>
+    <a id="modal-link" href="#" target="_blank" class="modal-visit-btn">🚀 Visit Tool →</a>
+  </div>
+</div>
+
+<!-- ===== WIZARD MODAL ===== -->
+<div class="modal-overlay" id="wizard-overlay" onclick="closeWizard(event)">
+  <div class="modal wizard-container" id="wizard-modal">
+    <button class="modal-close" onclick="document.getElementById('wizard-overlay').style.display='none'">✕</button>
+    <h2 style="font-family:var(--font-head);margin-bottom:10px">🪄 AI Tool Finder</h2>
+    <p style="color:var(--text-muted);font-size:14px">Answer 2 simple questions to find your perfect AI match</p>
+    
+    <div id="wizard-step-1" class="wizard-step active">
+      <h3 style="margin-top:20px">What is your main goal?</h3>
+      <div class="wizard-options">
+        <div class="wizard-opt" onclick="wizardNext(1, 'Writing')">✍️ Content Writing</div>
+        <div class="wizard-opt" onclick="wizardNext(1, 'Image')">🎨 Generate Images</div>
+        <div class="wizard-opt" onclick="wizardNext(1, 'Coding')">💻 Coding / Tech</div>
+        <div class="wizard-opt" onclick="wizardNext(1, 'Automation')">⚙️ Productivity</div>
+      </div>
+    </div>
+
+    <div id="wizard-step-2" class="wizard-step">
+      <h3 style="margin-top:20px">What is your budget?</h3>
+      <div class="wizard-options">
+        <div class="wizard-opt" onclick="wizardFinish('Free')">🆓 Free Only</div>
+        <div class="wizard-opt" onclick="wizardFinish('Paid')">💰 Pro / Paid</div>
+      </div>
+    </div>
+
+    <div id="wizard-result" class="wizard-step">
+      <div class="wizard-result">
+        <p style="font-size:13px;color:var(--text-muted);margin-bottom:10px">BASED ON YOUR NEEDS, WE RECOMMEND:</p>
+        <div id="recommended-tool-ui"></div>
+      </div>
+      <button class="modal-visit-btn" style="margin-top:20px" onclick="location.reload()">Start Over</button>
+    </div>
+  </div>
+</div>
+<!-- ===== COMPARE BAR ===== -->
+<div class="compare-bar" id="compare-bar">
+  <div style="color:var(--text-muted);font-size:12px;font-weight:600">COMPARE (max 2)</div>
+  <div id="compare-items-container" style="display:flex;gap:10px"></div>
+  <button class="compare-btn-trigger" onclick="openCompareModal()">Compare Now</button>
+  <button style="background:transparent;border:none;color:var(--pink);cursor:pointer;font-size:18px" onclick="clearCompare()">✕</button>
+</div>
+
+<!-- ===== COMPARE MODAL ===== -->
+<div class="modal-overlay" id="compare-overlay" onclick="closeCompare(event)">
+  <div class="modal" id="compare-modal" style="max-width:800px">
+    <button class="modal-close" onclick="document.getElementById('compare-overlay').style.display='none'">✕</button>
+    <h2 style="font-family:var(--font-head);text-align:center;margin-bottom:20px">Side-by-Side Comparison</h2>
+    <div id="compare-content">
+      <table class="compare-table">
+        <thead>
+          <tr id="compare-head"></tr>
+        </thead>
+        <tbody id="compare-body"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CATEGORY MODAL ===== -->
+<div class="modal-overlay" id="category-modal-overlay" onclick="closeCategoryModal(event)">
+  <div class="modal" style="max-width:900px; padding:40px">
+    <button class="modal-close" onclick="document.getElementById('category-modal-overlay').style.display='none'">✕</button>
+    <h2 style="font-family:var(--font-head);text-align:center;margin-bottom:10px">Explore All Categories</h2>
+    <p style="text-align:center;color:var(--text-muted);margin-bottom:30px">Find the right AI tool by browsing our specialized categories</p>
+    
+    <div class="categories-grid" style="grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:15px">
+      <div class="cat-card" onclick="selectCatAndClose('AI Chatbot')"><div class="cat-icon" style="background:rgba(59,130,246,0.15);color:#60a5fa">💬</div><div class="cat-name">AI Chatbot</div></div>
+      <div class="cat-card" onclick="selectCatAndClose('AI Writing')"><div class="cat-icon" style="background:rgba(16,185,129,0.15);color:#34d399">✏️</div><div class="cat-name">AI Writing</div></div>
+      <div class="cat-card" onclick="selectCatAndClose('AI Image Generator')"><div class="cat-icon" style="background:rgba(168,85,247,0.15);color:#c084fc">🖼️</div><div class="cat-name">AI Image Generator</div></div>
+      <div class="cat-card" onclick="selectCatAndClose('AI Video')"><div class="cat-icon" style="background:rgba(239,68,68,0.15);color:#f87171">🎬</div><div class="cat-name">AI Video</div></div>
+      <div class="cat-card" onclick="selectCatAndClose('AI Presentation')"><div class="cat-icon" style="background:rgba(245,158,11,0.15);color:#fbbf24">🎵</div><div class="cat-name">AI Presentation</div></div>
+      <div class="cat-card" onclick="selectCatAndClose('AI Coding')"><div class="cat-icon" style="background:rgba(99,102,241,0.15);color:#818cf8">💻</div><div class="cat-name">AI Coding</div></div>
+      <div class="cat-card" onclick="selectCatAndClose('AI Design')"><div class="cat-icon" style="background:rgba(236,72,153,0.15);color:#f472b6">🎨</div><div class="cat-name">AI Design</div></div>
+      <div class="cat-card" onclick="selectCatAndClose('AI Automation')"><div class="cat-icon" style="background:rgba(14,165,233,0.15);color:#38bdf8">⚙️</div><div class="cat-name">AI Automation</div></div>
+      <div class="cat-card" onclick="selectCatAndClose('AI Data Viz')"><div class="cat-icon" style="background:rgba(20,184,166,0.15);color:#2dd4bf">📊</div><div class="cat-name">AI Data Viz</div></div>
+      <div class="cat-card" onclick="selectCatAndClose('AI Spreadsheet')"><div class="cat-icon" style="background:rgba(249,115,22,0.15);color:#fb923c">💼</div><div class="cat-name">AI Spreadsheet</div></div>
+      <div class="cat-card" onclick="selectCatAndClose('AI Scheduling')"><div class="cat-icon" style="background:rgba(139,92,246,0.15);color:#a78bfa">🌟</div><div class="cat-name">AI Scheduling</div></div>
+      <div class="cat-card" onclick="selectCatAndClose(null, true)"><div class="cat-icon" style="background:rgba(100,116,139,0.15);color:#94a3b8">🔧</div><div class="cat-name">Show All</div></div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script src="assets/electric-border.js"></script>
+</body>
+</html>
