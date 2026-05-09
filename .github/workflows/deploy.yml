@@ -33,10 +33,10 @@ jobs:
       - name: Build with Next.js
         run: npx next build
 
-      - name: Debug: List output directory
+      - name: "Debug List output directory"
         run: |
           echo "Checking for 'out' directory..."
-          ls -R out || echo "Folder 'out' not found!"
+          if [ -d "out" ]; then ls -R out; else echo "Folder 'out' not found!"; fi
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
